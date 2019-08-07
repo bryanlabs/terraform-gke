@@ -1,5 +1,5 @@
-ailabs:[code] dan@devbox:gke-cluster-terraform (master) 
-$ terraform apply -var-file=${ENVIRONMENT}.tfvars
+dan@devbox:terraform-gke (master) 
+$ terraform apply -var-file=production.tfvars
 
 An execution plan has been generated and is shown below.
 Resource actions are indicated with the following symbols:
@@ -25,7 +25,7 @@ Terraform will perform the following actions:
       + logging_service             = (known after apply)
       + master_version              = (known after apply)
       + monitoring_service          = (known after apply)
-      + name                        = "gke-from-scratch-249100-cluster"
+      + name                        = "terraform-gke-249103-cluster"
       + network                     = "default"
       + node_locations              = (known after apply)
       + node_version                = (known after apply)
@@ -152,13 +152,13 @@ Terraform will perform the following actions:
 
   # google_container_node_pool.general_purpose will be created
   + resource "google_container_node_pool" "general_purpose" {
-      + cluster             = "gke-from-scratch-249100-cluster"
+      + cluster             = "terraform-gke-249103-cluster"
       + id                  = (known after apply)
       + initial_node_count  = 1
       + instance_group_urls = (known after apply)
       + location            = "us-east1"
       + max_pods_per_node   = (known after apply)
-      + name                = "gke-from-scratch-249100-general"
+      + name                = "terraform-gke-249103-general"
       + name_prefix         = (known after apply)
       + node_count          = (known after apply)
       + project             = (known after apply)
@@ -197,7 +197,7 @@ Terraform will perform the following actions:
 
 Plan: 2 to add, 0 to change, 0 to destroy.
 
-Do you want to perform these actions in workspace "production"?
+Do you want to perform these actions?
   Terraform will perform the actions described above.
   Only 'yes' will be accepted to approve.
 
@@ -214,37 +214,31 @@ google_container_cluster.cluster: Still creating... [1m10s elapsed]
 google_container_cluster.cluster: Still creating... [1m20s elapsed]
 google_container_cluster.cluster: Still creating... [1m30s elapsed]
 google_container_cluster.cluster: Still creating... [1m40s elapsed]
-google_container_cluster.cluster: Still creating... [1m50s elapsed]
-google_container_cluster.cluster: Still creating... [2m0s elapsed]
-google_container_cluster.cluster: Still creating... [2m10s elapsed]
-google_container_cluster.cluster: Still creating... [2m20s elapsed]
-google_container_cluster.cluster: Still creating... [2m30s elapsed]
-google_container_cluster.cluster: Still creating... [2m40s elapsed]
-google_container_cluster.cluster: Still creating... [2m50s elapsed]
-google_container_cluster.cluster: Still creating... [3m0s elapsed]
-google_container_cluster.cluster: Still creating... [3m10s elapsed]
-google_container_cluster.cluster: Still creating... [3m20s elapsed]
-google_container_cluster.cluster: Still creating... [3m30s elapsed]
-google_container_cluster.cluster: Still creating... [3m40s elapsed]
-google_container_cluster.cluster: Still creating... [3m50s elapsed]
-google_container_cluster.cluster: Still creating... [4m0s elapsed]
-google_container_cluster.cluster: Still creating... [4m10s elapsed]
-google_container_cluster.cluster: Still creating... [4m20s elapsed]
-google_container_cluster.cluster: Still creating... [4m30s elapsed]
-google_container_cluster.cluster: Still creating... [4m40s elapsed]
-google_container_cluster.cluster: Still creating... [4m50s elapsed]
-google_container_cluster.cluster: Still creating... [5m0s elapsed]
-google_container_cluster.cluster: Still creating... [5m10s elapsed]
-google_container_cluster.cluster: Still creating... [5m20s elapsed]
-google_container_cluster.cluster: Still creating... [5m30s elapsed]
-google_container_cluster.cluster: Still creating... [5m40s elapsed]
-google_container_cluster.cluster: Still creating... [5m50s elapsed]
-google_container_cluster.cluster: Still creating... [6m0s elapsed]
-google_container_cluster.cluster: Still creating... [6m10s elapsed]
-google_container_cluster.cluster: Still creating... [6m20s elapsed]
-google_container_cluster.cluster: Still creating... [6m30s elapsed]
-google_container_cluster.cluster: Still creating... [6m40s elapsed]
-google_container_cluster.cluster: Creation complete after 6m45s [id=gke-from-scratch-249100-cluster]
+google_container_cluster.cluster: Still creating... [1m51s elapsed]
+google_container_cluster.cluster: Still creating... [2m1s elapsed]
+google_container_cluster.cluster: Still creating... [2m11s elapsed]
+google_container_cluster.cluster: Still creating... [2m21s elapsed]
+google_container_cluster.cluster: Still creating... [2m31s elapsed]
+google_container_cluster.cluster: Still creating... [2m41s elapsed]
+google_container_cluster.cluster: Still creating... [2m51s elapsed]
+google_container_cluster.cluster: Still creating... [3m1s elapsed]
+google_container_cluster.cluster: Still creating... [3m11s elapsed]
+google_container_cluster.cluster: Still creating... [3m21s elapsed]
+google_container_cluster.cluster: Still creating... [3m31s elapsed]
+google_container_cluster.cluster: Still creating... [3m41s elapsed]
+google_container_cluster.cluster: Still creating... [3m51s elapsed]
+google_container_cluster.cluster: Still creating... [4m1s elapsed]
+google_container_cluster.cluster: Still creating... [4m11s elapsed]
+google_container_cluster.cluster: Still creating... [4m21s elapsed]
+google_container_cluster.cluster: Still creating... [4m31s elapsed]
+google_container_cluster.cluster: Still creating... [4m41s elapsed]
+google_container_cluster.cluster: Still creating... [4m51s elapsed]
+google_container_cluster.cluster: Still creating... [5m1s elapsed]
+google_container_cluster.cluster: Still creating... [5m11s elapsed]
+google_container_cluster.cluster: Still creating... [5m21s elapsed]
+google_container_cluster.cluster: Still creating... [5m31s elapsed]
+google_container_cluster.cluster: Still creating... [5m41s elapsed]
+google_container_cluster.cluster: Creation complete after 5m45s [id=terraform-gke-249103-cluster]
 google_container_node_pool.general_purpose: Creating...
 google_container_node_pool.general_purpose: Still creating... [10s elapsed]
 google_container_node_pool.general_purpose: Still creating... [20s elapsed]
@@ -253,21 +247,17 @@ google_container_node_pool.general_purpose: Still creating... [40s elapsed]
 google_container_node_pool.general_purpose: Still creating... [50s elapsed]
 google_container_node_pool.general_purpose: Still creating... [1m0s elapsed]
 google_container_node_pool.general_purpose: Still creating... [1m10s elapsed]
-google_container_node_pool.general_purpose: Still creating... [1m20s elapsed]
-google_container_node_pool.general_purpose: Creation complete after 1m27s [id=us-east1/gke-from-scratch-249100-cluster/gke-from-scratch-249100-general]
-
-Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
-
-Outputs:
+google_container_node_pool.general_purpose: Creation complete after 1m16s [id=us-east1/terraform-gke-249103-cluster/terraform-gke-249103-general]
 
 
-$ gcloud beta container clusters get-credentials gke-from-scratch-249100-cluster --region us-east1 --project gke-from-scratch-249100
+dan@devbox:terraform-gke (master) 
+$ gcloud beta container clusters get-credentials ${PROJECT}-cluster --region us-east1 --project ${PROJECT}
 Fetching cluster endpoint and auth data.
-kubeconfig entry generated for gke-from-scratch-249100-cluster.
-ailabs:[code] dan@devbox:gke-cluster-terraform (master) 
+kubeconfig entry generated for terraform-gke-249103-cluster.
 
+dan@devbox:terraform-gke (master) 
 $ kubectl get nodes
-NAME                                                  STATUS   ROLES    AGE   VERSION
-gke-gke-from-scratch-gke-from-scratch-937deb86-dd2m   Ready    <none>   19m   v1.12.8-gke.10
-gke-gke-from-scratch-gke-from-scratch-d55dc570-28x2   Ready    <none>   19m   v1.12.8-gke.10
-gke-gke-from-scratch-gke-from-scratch-f5da62b4-mgbc   Ready    <none>   19m   v1.12.8-gke.10
+NAME                                                  STATUS   ROLES    AGE     VERSION
+gke-terraform-gke-24-terraform-gke-24-4df7385d-bxd0   Ready    <none>   2m34s   v1.12.8-gke.10
+gke-terraform-gke-24-terraform-gke-24-9c3ca095-clgm   Ready    <none>   2m37s   v1.12.8-gke.10
+gke-terraform-gke-24-terraform-gke-24-c2606697-8rc8   Ready    <none>   2m29s   v1.12.8-gke.10

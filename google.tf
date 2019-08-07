@@ -10,7 +10,7 @@ variable "region" {
 
 terraform {
   backend "gcs" {
-    bucket = "bryanlabs"
+    bucket = "bryanlabs-code"
     prefix = "terraform"
     credentials = "account.json"
   }

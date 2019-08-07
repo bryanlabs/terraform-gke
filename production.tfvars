@@ -1,4 +1,4 @@
-project = "gke-from-scratch-249100"
+project = "terraform-gke-249103"
 region = "us-east1"
 
 general_purpose_machine_type = "n1-standard-1"
